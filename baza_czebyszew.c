@@ -10,7 +10,7 @@
 */
 
 /*
-	Funkcje bazowe: 
+	Funkcje bazowe:
 	n - liczba funkcji
 	a,b - granice przedzialu aproksymacji
 	i - numer funkcji
