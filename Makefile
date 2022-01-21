@@ -1,5 +1,10 @@
-aprox: main.o splines.o points.o baza_czebyszew.o aproksymator.o gaus/libge.a
-	$(CC) -o aprox  main.o splines.o points.o baza_czebyszew.o aproksymator.o -L gaus -l ge
+all: aprox_chebyshev aprox_taylor
+
+aprox_chebyshev: main.o splines.o points.o baza_czebyszew.o aproksymator.o gaus/libge.a
+	$(CC) -o aprox_chebyshev main.o splines.o points.o baza_czebyszew.o aproksymator.o -L gaus -l ge
+
+aprox_taylor: main.o splines.o points.o baza_taylor.o aproksymator.o gaus/libge.a
+	$(CC) -o aprox_taylor main.o splines.o points.o baza_taylor.o aproksymator.o -L gaus -l ge
 
 intrp: main.o splines.o points.o interpolator.o gaus/libge.a
 	$(CC) -o intrp  main.o splines.o points.o interpolator.o -L gaus -l ge
@@ -16,4 +21,4 @@ interpolator.o: makespl.h points.h gaus/piv_ge_solver.h
 .PHONY: clean
 
 clean:
-	-rm *.o aprox intrp prosta
+	-rm *.o aprox_chebyshev aprox_taylor intrp prosta
