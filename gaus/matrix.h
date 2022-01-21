@@ -43,4 +43,5 @@ matrix_t* symm_pivot_ge_matrix(matrix_t*, int* per);
 
 int* pivot_get_inv_per(matrix_t*, int* row_per);
 
+
 #endif

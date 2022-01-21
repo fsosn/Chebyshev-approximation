@@ -162,6 +162,7 @@ main(int argc, char** argv)
 
 		fclose(gpf);
 	}
-
+	
+	free_spl(&spl);
 	return 0;
 }
