@@ -21,4 +21,4 @@ interpolator.o: makespl.h points.h gaus/piv_ge_solver.h
 .PHONY: clean
 
 clean:
-	-rm *.o aprox_chebyshev aprox_sklejane intrp prosta
+	rm -f *.o aprox_chebyshev aprox_sklejane intrp prosta
