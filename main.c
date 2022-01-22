@@ -149,7 +149,7 @@ main(int argc, char** argv)
 			}
 		}
 		dx = (toX - fromX) / (n - 1);
-
+		free_pts(&pts);
 		if (gpf == NULL) {
 			fprintf(stderr, "%s: can not write gnuplot file: %s\n\n", argv[0],
 				gpt);
@@ -164,5 +164,6 @@ main(int argc, char** argv)
 	}
 	
 	free_spl(&spl);
+
 	return 0;
 }

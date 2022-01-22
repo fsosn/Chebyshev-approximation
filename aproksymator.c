@@ -1,6 +1,7 @@
 #include "baza.h"
 #include "makespl.h"
 #include "piv_ge_solver.h"
+#include "matrix.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,7 +10,6 @@
 void
 make_spl(points_t* pts, spline_t* spl)
 {
-
 	matrix_t* eqs = NULL;
 	double* x = pts->x;
 	double* y = pts->y;
@@ -84,6 +84,8 @@ make_spl(points_t* pts, spline_t* spl)
 		}
 	}
 
+	free_matrix(eqs);
+
 #ifdef DEBUG
 	{
 		FILE* tst = fopen("debug_spline_plot.txt", "w");
@@ -105,6 +107,5 @@ make_spl(points_t* pts, spline_t* spl)
 		fclose(tst);
 	}
 #endif
-	free(eqs->e);
-	free(eqs);
+
 }

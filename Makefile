@@ -18,7 +18,9 @@ aproksymator.o: makespl.h points.h baza.h gaus/piv_ge_solver.h
 interpolator.o: makespl.h points.h gaus/piv_ge_solver.h
 	$(CC) -ggdb3 -I gaus -c interpolator.c
 
-.PHONY: clean
+.PHONY: cleanexec cleanall
 
-clean:
+cleanexec:
 	-rm *.o aprox_chebyshev aprox_taylor intrp prosta
+cleanall:
+	rm -f *.o aprox_chebyshev aprox_taylor intrp prosta main.o splines.o baza_czebyszew.o baza_taylor.o points.o splines.o prosta.o interpolator.o aproksymator.o
