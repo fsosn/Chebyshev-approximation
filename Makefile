@@ -1,10 +1,10 @@
-all: aprox_chebyshev aprox_taylor intrp prosta
+all: aprox_chebyshev aprox_sklejane intrp prosta
 
 aprox_chebyshev: main.o splines.o points.o baza_czebyszew.o aproksymator.o gaus/libge.a
 	$(CC) -Wall -Wextra -pedantic -ggdb3 -o aprox_chebyshev main.o splines.o points.o baza_czebyszew.o aproksymator.o -L gaus -l ge
 
-aprox_taylor: main.o splines.o points.o baza_taylor.o aproksymator.o gaus/libge.a
-	$(CC) -Wall -Wextra -pedantic -ggdb3 -o aprox_taylor main.o splines.o points.o baza_taylor.o aproksymator.o -L gaus -l ge
+aprox_sklejane: main.o splines.o points.o baza_sklejane.o aproksymator.o gaus/libge.a
+	$(CC) -Wall -Wextra -pedantic -ggdb3 -o aprox_sklejane main.o splines.o points.o baza_sklejane.o aproksymator.o -L gaus -l ge
 
 intrp: main.o splines.o points.o interpolator.o gaus/libge.a
 	$(CC) -Wall -Wextra -pedantic -ggdb3 -o intrp  main.o splines.o points.o interpolator.o -L gaus -l ge
