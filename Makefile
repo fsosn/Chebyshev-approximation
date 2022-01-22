@@ -1,5 +1,3 @@
-all: aprox_chebyshev aprox_sklejane intrp prosta
-
 aprox_chebyshev: main.o splines.o points.o baza_czebyszew.o aproksymator.o gaus/libge.a
 	$(CC) -Wall -Wextra -pedantic -ggdb3 -o aprox_chebyshev main.o splines.o points.o baza_czebyszew.o aproksymator.o -L gaus -l ge
 
@@ -21,4 +19,4 @@ interpolator.o: makespl.h points.h gaus/piv_ge_solver.h
 .PHONY: clean
 
 clean:
-	-rm *.o aprox_chebyshev aprox_taylor intrp prosta
+	rm -f *.o aprox_chebyshev aprox_sklejane intrp prosta
