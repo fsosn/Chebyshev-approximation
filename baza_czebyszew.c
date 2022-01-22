@@ -1,7 +1,6 @@
 #include "baza.h"
 
 #include <stdio.h>
-#include <stdlib.h>
 
 /*Baza wielomianów Czebyszewa*/
 
